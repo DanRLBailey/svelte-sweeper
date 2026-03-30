@@ -8,5 +8,14 @@ export default defineConfig({
 		alias: {
 			$components: path.resolve('./src/components')
 		}
+	},
+	server: {
+		host: '0.0.0.0',
+		port: 3003,
+		allowedHosts: true
+	},
+	preview: {
+		host: '0.0.0.0',
+		port: 3003
 	}
 });
