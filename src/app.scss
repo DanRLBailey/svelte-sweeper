@@ -1,0 +1,68 @@
+:root {
+	--spacing: 1rem;
+	--spacing-2: calc(var(--spacing) * 2); //2rem
+	--spacing-3: calc(var(--spacing) * 3); //3rem
+	--spacing-4: calc(var(--spacing) * 4); //4rem
+	--spacing-0-5: calc(var(--spacing) * 0.5); //0.5rem
+	--spacing-0-25: calc(var(--spacing) * 0.25); //0.25rem
+
+	--color-bg: #f5f0e2;
+	--color-bg-dark: #31302c;
+
+	--color-primary: #b963ff;
+
+	--border-color: light-dark(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.5));
+	--border: 1px solid var(--border-color);
+	--border-primary: 1px solid var(--color-primary);
+	--border-2: 2px solid var(--border-color);
+	--border-2-primary: 2px solid var(--color-primary);
+	--border-3: 2px solid var(--border-color);
+	--border-3-primary: 2px solid var(--color-primary);
+
+	--radius: var(--spacing-0-5); //0.5rem
+	--radius-2: calc(var(--radius) * 2); //1rem
+	--radius-3: calc(var(--radius) * 3); //1.5rem
+	--radius-4: calc(var(--radius) * 4); //2rem
+	--radius-0-5: calc(var(--radius) * 0.5); //0.25rem
+	--radius-0-25: calc(var(--radius) * 0.25); //0.125rem
+	--radius-max: 50rem;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+
+	font-family: sans-serif;
+	background-color: light-dark(var(--color-bg), var(--color-bg-dark));
+}
+
+html {
+	color-scheme: dark;
+
+	&[data-theme='light'] {
+		color-scheme: light;
+	}
+}
+
+* {
+	box-sizing: border-box;
+	&:focus-visible {
+		outline: 3px solid var(--color-primary);
+	}
+}
+
+button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: var(--spacing-0-5);
+	background-color: transparent;
+	border: var(--border);
+	border-radius: var(--radius-max);
+	cursor: pointer;
+
+	&:hover {
+		outline: var(--border-2-primary);
+	}
+}
